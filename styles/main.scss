@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,500,600,700,800,900&display=swap");
+
+$screen_tablet: 700px;
+$screen_mobile: 500px;
+$screen_computer: 700px;
+
+@mixin tablet {
+  @media screen and (max-width: $screen_tablet) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: $screen_mobile) {
+    @content;
+  }
+}
+
+@mixin computer {
+  @media screen and (max-width: $screen_computer) {
+    @content;
+  }
+}
+body {
+  font-family: "Muli";
+  padding: 0px 20vw;
+  @include phone {
+    padding: 0px 5vw;
+}
+position: relative;
+  //   margin: 0px;
+}
+
+.navbar {
+  // background-color: black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  .icon {
+    font-size: 60px;
+  }
+
+  .manu {
+    font-size: 20px;
+  }
+
+  div {
+    color: #c2c2c2;
+  }
+}
+
+.container {
+  .heading {
+    margin: 100px 0px;
+    h2 {
+      font-weight: 800;
+      font-size: 35px;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      letter-spacing: 0.02em;
+      font-size: 12px;
+      font-weight: 300;
+      color: #8383838e;
+      max-width: 500px;
+    }
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 80px;
+    // grid-row-gap: 40px;
+
+    div:nth-child(even) {
+      margin-top: 100px;
+    }
+
+    @include phone {
+        grid-template-columns: 1fr;
+    }
+  }
+}
+
+.card {
+  img {
+    // max-width: 300px;
+    width: 100%;
+  }
+
+  h4 {
+    margin: 20px;
+  }
+
+  p {
+    margin: 20px;
+    margin-top: -10px;
+    font-size: 9px;
+    font-weight: 800;
+    // opacity: 0.5;
+    letter-spacing: 0.05em;
+    color: #c8c8c8;
+  }
+}
+
+.button {
+  border: 1px solid rgba(208, 208, 208, 0.507);
+  max-width: 180px;
+  padding: 10px 20px;
+  text-align: center;
+  
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+
+  margin-top: 60px;
+  margin-bottom: 60px;
+  border-radius: 100px;
+  color: rgba(31, 31, 31, 0.726);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  .social {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+
+    ion-icon {
+      margin: 0px 10px;
+      font-size: 13px;
+      color: #c2c2c2;
+    }
+  }
+  p {
+    border-radius: 100px;
+    color: rgba(31, 31, 31, 0.726);
+    font-weight: 800;
+    font-size: 13px;
+    margin-right: 10px;
+  }
+}
